@@ -1,0 +1,30 @@
+{
+    "name": "priority-task-manager",
+    "version": "1.0.0",
+    "main": "src/index.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "node dist/index.js",
+        "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.21.2",
+        "init": "^0.1.2",
+        "socket.io": "^4.8.1",
+        "socket.io-client": "^4.8.1",
+        "uuid": "^9.0.1"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.23",
+        "@types/node": "^20.19.21",
+        "@types/uuid": "^9.0.8",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^5.9.3"
+    },
+    "description": "",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs"
+}

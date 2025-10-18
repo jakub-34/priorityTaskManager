@@ -9,5 +9,6 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*", "tests/client.ts"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "tests", "dist"]
 }

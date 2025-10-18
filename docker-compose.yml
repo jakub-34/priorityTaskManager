@@ -1,0 +1,10 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: task-queue-backend
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production

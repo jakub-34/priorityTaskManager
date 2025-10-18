@@ -1,6 +1,7 @@
-import { io } from "socket.io-client";
+import { default as ioClient } from "socket.io-client";
+import { Task } from "../src/models/Task";
 
-const socket = io("http://localhost:3000");
+const socket = ioClient("http://localhost:3000");
 
 // Send join_queue event upon connection
 socket.on("connect", () => {
@@ -9,7 +10,7 @@ socket.on("connect", () => {
 });
 
 // When a new task is added
-socket.on("task_added", (task) => {
+socket.on("task_added", (task: Task) => {
   console.log(`Task added: ${task.name}`);
 });
 
@@ -19,12 +20,12 @@ socket.on("completed_cleared", () => {
 });
 
 // When the task progress changes
-socket.on("task_progress", (task) => {
+socket.on("task_progress", (task: Task) => {
   console.log(`Task progress: ${task.name} ${task.progress}%`);
 });
 
 // When the task is completed
-socket.on("task_completed", (task) => {
+socket.on("task_completed", (task: Task) => {
   console.log(`Task completed: ${task.name}`);
 });
 
@@ -34,12 +35,12 @@ socket.on("queue_idle", () => {
 });
 
 // When a task starts processing
-socket.on("task_started", (task) => {
+socket.on("task_started", (task: Task) => {
   console.log(`Task started: ${task.name}`);
 });
 
 // Queue update
-socket.on("queue_update", (data) => {
+socket.on("queue_update", (data: any) => {
     console.log("Queue update:", data);
 });
 

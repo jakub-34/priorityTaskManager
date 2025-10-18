@@ -1,4 +1,4 @@
-import { Task } from './Task';
+import { Task } from '../models/Task';
 import { randomInt } from "crypto";
 
 export type QueueSnapshot = {
@@ -55,7 +55,7 @@ export class TaskManager {
     }
 
     startProcessing() {
-        if (this.tickHandle) return; // already running
+        if (this.tickHandle) return;
 
         this.pickNextTask();
         this.tickHandle = setInterval(async () => {

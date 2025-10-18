@@ -87,8 +87,6 @@ export class TaskManager {
             const completed = this.currentTask;
             this.completed.push({...completed, progress: 100});
             this.currentTask = null;
-            this.currentTask = null;
-            this.pending = this.pending.filter(t => t.id !== completed.id);
             this.emitUpdate("task_completed", completed);
             this.pickNextTask();
         }

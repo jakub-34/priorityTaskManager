@@ -27,10 +27,6 @@ app.use("/api/tasks", taskRouter(manager));
 io.on("connection", (socket) => {
   console.log("Client connected:", socket.id);
 
-  socket.on("join_queue", () => {
-    socket.emit("queue_update", manager.getSnapshot());
-  });
-
   socket.on("disconnect", () => {
     console.log("Client disconnected:", socket.id);
   });

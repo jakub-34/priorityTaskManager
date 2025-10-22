@@ -24,10 +24,16 @@ Server will be listening on http://localhost:3000
 npm run test
 ```
 
-## Run the client for manual testing
+## Run the client listener for manual testing
 
 ```bash
-npx ts-node tests/client.ts
+npx ts-node tests/clientListener.ts
+```
+
+## Run the client caller for manual testing
+
+```bash
+npx ts-node tests/clientCaller.ts
 ```
 
 ## Run backend through Docker (production)
